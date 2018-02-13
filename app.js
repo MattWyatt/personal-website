@@ -63,5 +63,6 @@ app.get("/getPosts", (req, res) => {
 });
 
 app.listen(3000, () => {
+	database.init();
 	console.log("connected and listening on port 3000!");
 })
