@@ -1,0 +1,77 @@
+/* actual custom classes */
+.centered {
+    text-align: center;
+}
+
+/* some simple overwrites to help theme the site better */
+
+body {
+    background-color: #f9f9f9;
+}
+
+#menu {
+    background-color: #212121;
+    width: 250px;
+}
+
+#menu .pure-menu-selected {
+    background: #313131;
+}
+
+#menu h2 {
+    color: #f9f9f9;
+}
+
+#menu a {
+    color: #f9f9f9;
+    padding: 0.6em;
+}
+
+#menu hr {
+    width: 200px;
+    color: #f9f9f9;
+}
+
+@media (max-width: 48em) {
+    #menu {
+        margin-left: -250px;
+    }
+
+    #layout.active #menu {
+        position: fixed;
+    }
+}
+
+.menu-link {
+    background: #212121;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    background: #212121;
+}
+
+.pure-menu-item {
+    font-size: x-large;
+}
+
+.content-subhead {
+    color: #4d4d4d;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: #212121 solid 2px;
+    font-weight: 300;
+}
+
+#main .header h2 {
+    color: #4d4d4d;
+}
+
+#main .content p {
+    color: #212121;
+}
+
+.content-subhead {
+    color: #4d4d4d;
+}

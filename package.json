@@ -1,0 +1,19 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "my personal website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "setup": "node setup.js"
+  },
+  "author": "matt wyatt",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "express": "^4.16.2",
+    "helmet": "^3.11.0",
+    "marked": "^0.3.12",
+    "mysql": "^2.15.0"
+  }
+}

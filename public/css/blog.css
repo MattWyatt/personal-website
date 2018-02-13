@@ -1,0 +1,8 @@
+.blog-post-section h2 {
+    color: #4d4d4d;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: #212121 solid 2px;
+    font-weight: 300;
+}

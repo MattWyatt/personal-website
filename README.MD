@@ -1,0 +1,2 @@
+# personal-website
+this is just the repository for my [personal website](https://mattwyatt.me). it's on github for the purpose of cloning it into the server. but if you like, I suppose you could clone it and write your own website on the framework here.
