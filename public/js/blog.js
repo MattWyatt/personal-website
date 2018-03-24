@@ -4,5 +4,5 @@ $.get("/getPosts", (data) => {
         div.className = "blog-post-section";
         div.id = element.title;
         document.getElementById("posts").appendChild(div).innerHTML = element.content;
-    })
-})
+    });
+});

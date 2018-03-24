@@ -35,7 +35,7 @@ app.get("/blog", (req, res) => {
 app.post("/makePost", (req, res) => {
     authentication.check(req.body.password, (result) => {
         if (result) {
-            blogPost.makePost(req.body.title, req.body.content)
+            blogPost.makePost(req.body.title, req.body.content);
             res.sendStatus(200);
         }
         else {
