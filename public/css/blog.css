@@ -1,3 +1,10 @@
+button {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
 .blog-post-section #title {
     color: #4d4d4d;
     margin-top: 50px;
