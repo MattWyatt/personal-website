@@ -63,8 +63,17 @@ app.get("/getPosts", (req, res) => {
 });
 
 app.post("/getPostByName", (req, res) => {
-    blogPost.getPostByName(req.body.name, (post) => {
-        res.send(post);
+    blogPost.hasPostNamed(req.body.name, (boolean) => {
+        if (!boolean) {
+            let no_post = {html: ""};
+            no_post.html = "<h1>there doesn't appear to be a post here...</h1>";
+            res.send(no_post)
+        }
+        else {
+            blogPost.getPostByName(req.body.name, (post) => {
+                res.send(post);
+            });
+        }
     });
 });
 

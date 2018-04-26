@@ -21,14 +21,27 @@ module.exports.deletePost = (postTitle) => {
     });
 };
 
+module.exports.hasPostNamed = (postTitle, callback) => {
+    module.exports.getPostByName(postTitle, (post) => {
+        if (post == undefined) {
+            callback(false);
+        }
+        else if (post) {
+            callback(true);
+        }
+    });
+};
+
 module.exports.getPostByName = (postTitle, callback) => {
     database.get((connection) => {
         connection.query("SELECT * FROM posts WHERE title=\"" + postTitle + "\"", (error, result) => {
             if (error) {throw error;}
             let post = result[0];
-            marked(post.content, (error, html) => {
-                post.html = html;
-            });
+            if (post) {
+                marked(post.content, (error, html) => {
+                    post.html = html;
+                });
+            }
             callback(post)
         });
     });
