@@ -10,7 +10,7 @@ module.exports.init = () => {
         password: config.login.password,
         database: config.blogDatabaseName
     });
-    var createPostTable = "CREATE TABLE IF NOT EXISTS posts (title TEXT, content TEXT)";
+    var createPostTable = "CREATE TABLE IF NOT EXISTS posts (title TEXT, description TEXT, content TEXT)";
     var createAuthTable = "CREATE TABLE IF NOT EXISTS auth (hash CHAR(60))";
     databaseConnection.query(createPostTable, (error) => {
         if (error) throw error;

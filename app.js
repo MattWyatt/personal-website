@@ -35,7 +35,7 @@ app.get("/blog", (req, res) => {
 app.post("/makePost", (req, res) => {
     authentication.check(req.body.password, (result) => {
         if (result) {
-            blogPost.makePost(req.body.title, req.body.content);
+            blogPost.makePost(req.body.title, req.body.description, req.body.content);
             res.sendStatus(200);
         }
         else {
@@ -59,6 +59,21 @@ app.post("/deletePost", (req, res) => {
 app.get("/getPosts", (req, res) => {
     blogPost.getPosts((result) => {
         res.send(result);
+    });
+});
+
+app.post("/getPostByName", (req, res) => {
+    blogPost.hasPostNamed(req.body.name, (boolean) => {
+        if (!boolean) {
+            let no_post = {html: ""};
+            no_post.html = "<h1>there doesn't appear to be a post here...</h1>";
+            res.send(no_post)
+        }
+        else {
+            blogPost.getPostByName(req.body.name, (post) => {
+                res.send(post);
+            });
+        }
     });
 });
 
